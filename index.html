@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Welcome to Roxxo Bank</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/round-about.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- jQuery Dependency -->
+        <script src="js/jquery-3.1.1.js"></script>
+
+        <!-- CMIS Library -->
+        <script src="lib/cmis.js"></script>
+        <!-- Roxxo component -->
+        <script src="js/roxxo.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Navigation -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">roxxo.io Bank</a>
+                </div>
+                <center>
+                    <div class="navbar-collapse collapse" id="navbar-main">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="about.html">About</a>
+                            </li>
+                            <li><a href="product.html">Products</a>
+                            </li>
+                            <li><a href="service.html">Services</a>
+                            </li>
+                            <!-- TODO this is a placeholder the username should be updated when the user logs in -->
+                            <li id="display-username" visibility="hidden"><a>Welcome Helen Back</a>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search" action="login.html">
+                            <div class="form-group input-login">
+                                <input type="text" class="form-control" id="input-username" name="username" placeholder="Username">
+                                <input type="text" class="form-control" id="input-password" name="password" placeholder="Password">
+                                <input type="button" class="btn btn-default" value="Login" id="login">Sign In</button>
+                                <span class="help-block"></span>
+                            </div>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div id='data'>
+               <!-- Introduction Row -->
+               <div class="row" id="blurb">
+                <div class="col-lg-12">
+                    <h1 class="page-header">ROXXO.io Bank
+                        <small>banking just got a whole lot better</small>
+                    </h1>
+                    <p>Here at roxxo.io we're well know as the company that has revolutionised banking with easy to use services and access to every possible service online. Login to download your statements, read your correspondence and respond to customer service requests </p>
+                    <p>Access to our Internet Banking and Mobile Banking, 24-hour telephone services as well as any of our branches in Scotland.
+                        Earn interest on your credit balance by adding Vantage. Free mobile text alerts. Worldwide Travel Insurance for you and your family including winter sports cover. All cover stops on the account holder’s 80th birthday.
+                        AA Breakdown Cover with Roadside Assistance, Relay, Home start and Accident Management.
+                    </div>
+                </div>
+
+                <!-- Services Members Row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header">What we offer</h2>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center">
+                        <img class="img-circle img-responsive img-center" src="images/bank-accounts.jpg" alt="">
+                        <h3>Current Accounts                </h3>
+                        <p>Earn 3% back in Rewards on household bills paid by Direct Debit - that covers council tax, gas, electricity, water, phone, TV and broadband bills. The more eligible Direct Debits you have with your roxxo.io account, the more Rewards you'll earn. Monthly fee applies.</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center">
+                        <img class="img-circle img-responsive img-center" src="images/savings-account.jpg" alt="">
+                        <h3>Saving products
+                        </h3>
+                        <p>Put your plans into action with a roxxo.io personal loan
+                            With our simple online application, applying has never been so easy.
+                            Borrow £7,500 - £25,000 at our lowest ever Representative 3.9% APR.
+                            Other amounts available at alternative rates. Over 18s and existing NatWest current account customers only.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center">
+                        <img class="img-circle img-responsive img-center" src="images/mortgages.jpg" alt="">
+                        <h3>Mortgages
+                        </h3>
+                        <p>Make your mortgages pay off!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="container">
+                        <p>Copyright &copy; Roxxo Ltd 2016</p>
+                        <p class="navbar-text navbar-right">Status: <span id="label-status-connection">Disconnected</span><span id="label-status-repository"></span> <a href="#" class="hidden" id="link-server-info" data-toggle="modal" data-target="#modal-server-info"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a></p>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </footer>
+
+        </div>
+        <!-- /.container -->
+
+        <!-- HTML template -->
+        <!-- this is used a HTML template for the library rows being copied once for each new row retrieved from the repo -->
+        <script id="cmis-library-row-template" type="text/html">
+            <tr class="cmis-library-row"  versionSeriesId="${cmis:versionSeriesId}" baseTypeId="${cmis:baseTypeId}" objectTypeId="${cmis:objectTypeId}" mimetype="${cmis:contentStreamMimeType}">
+                <td class="cmis-library-cell icon"><img class="img-circle img-responsive img-center" src="images/acrobatpdf-24x24.jpg" alt=""></td>
+                <td class="cmis-library-cell cmis-name">${cmis:name}</td>
+                <div class="icon icon-download" enabled="${canGetContentStream}" title="Download"></div>
+                <div class="icon icon-preview" enabled="${canGetContentStream}" mimeType=${cmis:contentStreamMimeType} title="Preview"></div>
+            </td>
+        </tr>
+    </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        <!-- Roxxo Code -->
+        (function ($) {
+            $( "form" ).find("#login").click(function( event ) {
+                onClickLogin();
+            });
+        }) (jQuery)
+    </script>
+</body>
+
+</html>
